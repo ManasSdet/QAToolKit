@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "EnvCompare - QA Environment Switcher",
+  "version": "1.0.0",
+  "description": "Switch and compare the same page across QA, UAT, SIT and Production environments.",
+
+  "icons": {
+    "32": "icons/icon32.png"
+  },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "EnvCompare",
+    "default_icon": {
+      "32": "icons/icon32.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "consoleHook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

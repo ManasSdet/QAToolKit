@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>EnvCompare</title>
+
+  <link rel="stylesheet" href="popup.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <h2>EnvCompare</h2>
+
+
+  <div class="current">
+
+    <span>Current Environment</span>
+
+    <strong id="currentEnv">
+      Detecting...
+    </strong>
+
+  </div>
+
+
+  <div class="url-box">
+
+    <small>Current URL</small>
+
+    <div id="currentUrl"></div>
+
+  </div>
+
+
+  <hr>
+
+
+  <h3>Compare With</h3>
+
+
+  <select id="compareEnv">
+
+    <option value="">
+      Select Environment
+    </option>
+
+    <option value="SIT">
+      SIT
+    </option>
+
+    <option value="UAT">
+      UAT
+    </option>
+
+    <option value="STAGE">
+      STAGE
+    </option>
+
+    <option value="PROD">
+      PROD
+    </option>
+
+  </select>
+
+
+  <div class="target-preview">
+
+    <div class="field-group">
+    <label for="targetUrl">
+        Target URL
+    </label>
+
+    <input
+        type="url"
+        id="targetUrl"
+        class="target-url-input"
+        placeholder="Target URL will appear here"
+        spellcheck="false"
+    />
+	
+	<div class="target-url-hint">
+    Auto-generated URL. Edit if your target environment uses a different host.
+</div>
+
+    <div class="target-url-actions">
+        <button
+            type="button"
+            id="resetTargetUrlBtn"
+            class="secondary-btn"
+        >
+            Regenerate URL
+        </button>
+    </div>
+</div>
+
+  </div>
+
+
+  <button
+    id="compareBtn"
+    class="compare"
+  >
+    Compare Pages
+  </button>
+
+
+  <div id="status"></div>
+
+</div>
+
+
+<script src="popup.js"></script>
+
+</body>
+
+</html>

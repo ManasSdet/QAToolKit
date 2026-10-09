@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        EnvCompare Report
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="compare.css">
+
+</head>
+
+
+<body>
+
+<div class="page-shell">
+
+
+    <!-- ======================================================
+         HEADER
+         ====================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-left">
+
+            <div class="app-icon">
+                EC
+            </div>
+
+            <div>
+
+                <div class="app-name">
+                    EnvCompare
+                </div>
+
+                <h1>
+                    Environment Comparison Report
+                </h1>
+
+                <p class="hero-subtitle">
+                    Functional, resource and environment health validation
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+
+    <!-- ======================================================
+         ENVIRONMENT SUMMARY
+         ====================================================== -->
+
+    <section class="environment-panel">
+
+        <div class="environment-card source-card">
+
+            <div class="environment-card-top">
+
+                <span class="environment-label">
+                    SOURCE
+                </span>
+
+                <span
+                    id="sourceEnvironment"
+                    class="env-pill source-pill">
+                    SOURCE
+                </span>
+
+            </div>
+
+
+            <div
+                id="sourceUrl"
+                class="environment-url">
+
+                -
+
+            </div>
+
+        </div>
+
+
+        <div class="compare-arrow">
+
+            <div class="arrow-circle">
+                ⇄
+            </div>
+
+            <span>
+                Compared with
+            </span>
+
+        </div>
+
+
+        <div class="environment-card target-card">
+
+            <div class="environment-card-top">
+
+                <span class="environment-label">
+                    TARGET
+                </span>
+
+                <span
+                    id="targetEnvironment"
+                    class="env-pill target-pill">
+                    TARGET
+                </span>
+
+            </div>
+
+
+            <div
+                id="targetUrl"
+                class="environment-url">
+
+                -
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         ERROR
+         ====================================================== -->
+
+    <div
+        id="error"
+        class="error">
+    </div>
+
+
+    <!-- ======================================================
+         QUICK NAVIGATION
+         ====================================================== -->
+
+    <nav class="report-nav">
+
+        <a href="#functional">
+            Functional
+        </a>
+
+        <a href="#differences">
+            UI Differences
+        </a>
+
+        <a href="#health">
+            Environment Health
+        </a>
+
+        <a href="#broken-links-section">
+            Broken Links
+        </a>
+
+        <a href="#broken-images-section">
+            Broken Images
+        </a>
+
+        <a href="#fonts-section">
+            Fonts
+        </a>
+
+        <a href="#visual">
+            Visual
+        </a>
+		
+		<a href="#console-errors">
+			Console Errors
+		</a>
+
+    </nav>
+
+
+    <!-- ======================================================
+         01 FUNCTIONAL COMPARISON
+         ====================================================== -->
+
+    <section
+        id="functional"
+        class="report-section">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div>
+
+                <h2>
+                    Functional Comparison
+                </h2>
+
+                <p>
+                    Compare visible page structure and content
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-card">
+
+            <div class="table-scroll">
+
+                <table class="main-table">
+
+                    <thead>
+
+                    <tr>
+
+                        <th class="check-column">
+                            Check
+                        </th>
+
+                        <th>
+                            Source
+                        </th>
+
+                        <th>
+                            Target
+                        </th>
+
+                        <th class="status-column">
+                            Status
+                        </th>
+
+                    </tr>
+
+                    </thead>
+
+
+                    <tbody id="comparisonBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         02 DETAILED DIFFERENCES
+         ====================================================== -->
+
+    <section
+        id="differences"
+        class="report-section">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div>
+
+                <h2>
+                    Detailed Differences
+                </h2>
+
+                <p>
+                    Missing and additional elements between environments
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="details"
+            class="details-grid">
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         03 ENVIRONMENT HEALTH
+         ====================================================== -->
+
+    <section
+        id="health"
+        class="report-section">
+
+        <div class="section-title">
+
+            <div class="section-number health-number">
+                03
+            </div>
+
+            <div>
+
+                <h2>
+                    Environment Health
+                </h2>
+
+                <p>
+                    Broken links, images and font consistency
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="healthSummary"
+            class="health-summary">
+        </div>
+
+
+        <!-- BROKEN LINKS -->
+
+        <div
+            id="broken-links-section"
+            class="health-module">
+
+            <div class="module-header">
+
+                <div class="module-icon">
+                    🔗
+                </div>
+
+                <div>
+
+                    <h3>
+                        Broken Links
+                    </h3>
+
+                    <p>
+                        Validate HTTP status of visible same-origin links
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="brokenLinks"
+                class="module-content">
+            </div>
+
+        </div>
+
+
+        <!-- BROKEN IMAGES -->
+
+        <div
+            id="broken-images-section"
+            class="health-module">
+
+            <div class="module-header">
+
+                <div class="module-icon">
+                    🖼
+                </div>
+
+                <div>
+
+                    <h3>
+                        Broken Images
+                    </h3>
+
+                    <p>
+                        Validate image resources loaded on both pages
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="brokenImages"
+                class="module-content">
+            </div>
+
+        </div>
+
+
+        <!-- FONTS -->
+
+        <div
+            id="fonts-section"
+            class="health-module">
+
+            <div class="module-header">
+
+                <div class="module-icon">
+                    Aa
+                </div>
+
+                <div>
+
+                    <h3>
+                        Fonts Comparison
+                    </h3>
+
+                    <p>
+                        Compare font families and font resources
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="fontComparison"
+                class="module-content">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         04 VISUAL COMPONENT COMPARISON
+         ====================================================== -->
+
+    <section
+        id="visual"
+        class="report-section">
+
+        <div class="section-title">
+
+            <div class="section-number visual-number">
+                04
+            </div>
+
+            <div>
+
+                <h2>
+                    Visual Component Comparison
+                </h2>
+
+                <p>
+                    Component-level screenshot comparison between environments
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="visualComparison">
+
+            <div class="visual-loading">
+                Analysing visual components...
+            </div>
+
+        </div>
+
+    </section>
+	
+	<!-- ======================================================
+     05 CONSOLE ERROR COMPARISON
+     ====================================================== -->
+
+<section
+    id="console-errors"
+    class="report-section">
+
+    <div class="section-title">
+
+        <div class="section-number console-number">
+            05
+        </div>
+
+        <div>
+
+            <h2>
+                Console Error Comparison
+            </h2>
+
+            <p>
+                Compare JavaScript, Promise and resource errors between environments
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="consoleComparison">
+
+        <div class="console-loading">
+            Analysing console errors...
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+    <footer class="report-footer">
+
+        <div>
+
+            <strong>
+                EnvCompare
+            </strong>
+
+            <span>
+                QA Environment Switcher & Comparator
+            </span>
+
+        </div>
+
+
+        <span id="reportTimestamp">
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<!-- ==========================================================
+     SCRIPTS
+     ========================================================== -->
+
+<script src="compare.js"></script>
+
+<script src="visual.js"></script>
+
+<script src="console.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Bug Evidence Collector
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="popup.css"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <h1>
+            🐞 Bug Evidence Collector
+        </h1>
+
+        <p class="subtitle">
+            Capture useful QA evidence in one click.
+        </p>
+
+
+        <!-- ISSUE SUMMARY -->
+
+        <label for="bugTitle">
+            Issue Summary
+        </label>
+
+        <input
+            type="text"
+            id="bugTitle"
+            placeholder="Briefly describe the issue"
+        />
+
+
+        <!-- ACTION PERFORMED -->
+
+        <label for="bugNotes">
+            Action Performed
+        </label>
+
+        <textarea
+            id="bugNotes"
+            placeholder="What action did you perform before observing the issue?"
+        ></textarea>
+
+
+        <!-- EVIDENCE OPTIONS -->
+
+        <div class="options">
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="pageDetails"
+                    checked
+                >
+
+                Page Details
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="browserInfo"
+                    checked
+                >
+
+                Browser Information
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="screenshot"
+                    checked
+                >
+
+                Screenshot
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="consoleErrors"
+                    checked
+                >
+
+                Console Errors
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="apiFailures"
+                    checked
+                >
+
+                Failed API Requests
+            </label>
+
+        </div>
+
+
+        <!-- COLLECT EVIDENCE BUTTON -->
+
+        <button id="collectBtn">
+
+            🔍 Collect Evidence
+
+        </button>
+
+
+        <!-- STATUS MESSAGE -->
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+        <!-- SCREENSHOT SECTION -->
+
+        <div
+            id="screenshotSection"
+            class="result hidden"
+        >
+
+            <h2>
+                📸 Screenshot
+            </h2>
+
+            <img
+                id="screenshotPreview"
+                alt="Captured Screenshot"
+            >
+
+        </div>
+
+
+        <!-- CONSOLE ERROR SECTION -->
+
+        <div
+            id="consoleSection"
+            class="result hidden"
+        >
+
+            <div class="sectionHeader">
+
+                <h2>
+                    🔴 Console Errors
+                </h2>
+
+                <span
+                    id="consoleErrorCount"
+                    class="countBadge errorBadge"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div id="consoleErrorList">
+            </div>
+
+        </div>
+
+
+        <!-- FAILED API SECTION -->
+
+        <div
+            id="apiSection"
+            class="result hidden"
+        >
+
+            <div class="sectionHeader">
+
+                <h2>
+                    🌐 Failed API Requests
+                </h2>
+
+                <span
+                    id="apiFailureCount"
+                    class="countBadge apiBadge"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div id="apiFailureList">
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE JSON -->
+
+        <div
+            id="result"
+            class="result hidden"
+        >
+
+            <h2>
+                📋 Evidence Collected
+            </h2>
+
+            <pre id="evidenceOutput"></pre>
+
+        </div>
+
+
+        <!-- COPY FOR JIRA BUTTON -->
+
+        <button
+            id="copyJiraBtn"
+            class="secondaryBtn hidden"
+        >
+
+            📋 Copy for Jira
+
+        </button>
+
+
+        <!-- DOWNLOAD EVIDENCE PACKAGE BUTTON -->
+
+        <button
+            id="downloadReportBtn"
+            class="downloadBtn hidden"
+        >
+
+            ⬇️ Download Evidence Report
+
+        </button>
+
+
+    </div>
+
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>

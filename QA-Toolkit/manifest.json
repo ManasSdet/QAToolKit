@@ -1,0 +1,95 @@
+{
+  "manifest_version": 3,
+
+  "name": "QA Toolkit",
+
+  "version": "1.0.0",
+
+  "description": "A browser-based QA toolkit for environment comparison, bug evidence collection and API monitoring.",
+
+  "icons": {
+    "64": "icons/icon64.png"
+  },
+
+  "action": {
+    "default_popup": "launcher/launcher.html",
+    "default_title": "QA Toolkit",
+    "default_icon": {
+      "64": "icons/icon64.png"
+    }
+  },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "EnvCompare/consoleHook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "Bug-Evidence-Collector/page-monitor.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "Bug-Evidence-Collector/content.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    },
+
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "API_Plugin/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "API_Plugin/injected.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
+}

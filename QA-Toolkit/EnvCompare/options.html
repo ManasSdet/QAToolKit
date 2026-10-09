@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EnvCompare Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>EnvCompare Settings</h1>
+
+  <p>Configure the environments for your project.</p>
+
+  <label>Project Name</label>
+  <input
+    type="text"
+    id="projectName"
+    placeholder="Example: OPW CES"
+  >
+
+  <label>STAGE URL</label>
+  <input
+    type="url"
+    id="stageUrl"
+    placeholder="https://stage.example.com"
+  >
+
+  <label>UAT URL</label>
+  <input
+    type="url"
+    id="uatUrl"
+    placeholder="https://uat.example.com"
+  >
+
+  <label>SIT URL</label>
+  <input
+    type="url"
+    id="sitUrl"
+    placeholder="https://sit.example.com"
+  >
+
+  <label>Production URL</label>
+  <input
+    type="url"
+    id="prodUrl"
+    placeholder="https://www.example.com"
+  >
+
+  <button id="saveBtn">
+    Save Settings
+  </button>
+
+  <div id="status"></div>
+
+</div>
+
+<script src="options.js"></script>
+
+</body>
+</html>

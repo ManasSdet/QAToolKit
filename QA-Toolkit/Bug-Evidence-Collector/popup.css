@@ -1,0 +1,456 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #202124;
+}
+
+
+.container {
+    width: 420px;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+
+input[type="text"],
+textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius:
+        6px;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        13px;
+}
+
+
+textarea {
+
+    min-height:
+        80px;
+
+    resize:
+        vertical;
+}
+
+
+.options {
+
+    background:
+        white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        8px;
+
+    padding:
+        12px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.options label {
+
+    margin-bottom:
+        10px;
+
+    font-weight:
+        normal;
+}
+
+
+button {
+
+    width:
+        100%;
+
+    padding:
+        12px;
+
+    border:
+        none;
+
+    border-radius:
+        7px;
+
+    background:
+        #0b57d0;
+
+    color:
+        white;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+}
+
+
+button:hover {
+
+    background:
+        #0842a0;
+}
+
+
+button:disabled {
+
+    background:
+        #aaa;
+
+    cursor:
+        not-allowed;
+}
+
+
+.status {
+
+    margin-top:
+        12px;
+
+    text-align:
+        center;
+
+    font-size:
+        13px;
+}
+
+
+.result {
+
+    margin-top:
+        15px;
+
+    padding:
+        12px;
+
+    background:
+        white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        8px;
+}
+
+
+.result h2 {
+
+    margin-top:
+        0;
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        15px;
+}
+
+
+#screenshotPreview {
+
+    width:
+        100%;
+
+    border:
+        1px solid #ccc;
+
+    border-radius:
+        6px;
+}
+
+
+.sectionHeader {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+}
+
+
+.countBadge {
+
+    color:
+        white;
+
+    border-radius:
+        20px;
+
+    padding:
+        4px 8px;
+
+    min-width:
+        26px;
+
+    text-align:
+        center;
+
+    font-size:
+        11px;
+}
+
+
+.errorBadge {
+
+    background:
+        #d93025;
+}
+
+
+.apiBadge {
+
+    background:
+        #e37400;
+}
+
+
+.console-error {
+
+    padding:
+        8px;
+
+    margin-bottom:
+        8px;
+
+    background:
+        #fff4f4;
+
+    border-left:
+        4px solid #d93025;
+
+    border-radius:
+        4px;
+}
+
+
+.api-failure {
+
+    padding:
+        10px;
+
+    margin-bottom:
+        8px;
+
+    background:
+        #fff8ef;
+
+    border-left:
+        4px solid #e37400;
+
+    border-radius:
+        4px;
+}
+
+
+.console-error-type,
+.api-method {
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        5px;
+}
+
+
+.console-error-type {
+
+    color:
+        #b3261e;
+}
+
+
+.api-method {
+
+    color:
+        #b06000;
+}
+
+
+.console-error-message,
+.api-url {
+
+    font-size:
+        11px;
+
+    word-break:
+        break-word;
+}
+
+
+.console-error-source,
+.api-details {
+
+    margin-top:
+        6px;
+
+    font-size:
+        10px;
+
+    color:
+        #777;
+
+    word-break:
+        break-all;
+}
+
+
+.api-status {
+
+    margin-top:
+        5px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    color:
+        #b3261e;
+}
+
+
+.no-errors {
+
+    padding:
+        5px;
+
+    color:
+        #188038;
+
+    font-size:
+        12px;
+}
+
+
+pre {
+
+    white-space:
+        pre-wrap;
+
+    word-wrap:
+        break-word;
+
+    font-size:
+        11px;
+
+    max-height:
+        350px;
+
+    overflow-y:
+        auto;
+}
+
+
+.hidden {
+
+    display:
+        none;
+}
+
+.secondaryBtn {
+
+    margin-top: 12px;
+
+    background: #188038;
+
+}
+
+
+.secondaryBtn:hover {
+
+    background: #116329;
+
+}
+
+
+.copySuccess {
+
+    background: #137333;
+
+}
+
+
+.hidden {
+
+    display: none;
+}
+
+.downloadBtn {
+
+    margin-top: 10px;
+
+    background: #5f6368;
+}
+
+
+.downloadBtn:hover {
+
+    background: #3c4043;
+}
+
+
+.downloadSuccess {
+
+    background: #188038;
+}

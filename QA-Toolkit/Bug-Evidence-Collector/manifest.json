@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+
+  "name": "Bug Evidence Collector",
+
+  "version": "1.7.0",
+
+  "description": "Collect QA bug evidence including screenshots, console errors, failed API calls, URL, browser information and highlighted bug areas.",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "downloads",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "action": {
+    "default_title": "Bug Evidence Collector",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+
+      "js": [
+        "page-monitor.js"
+      ],
+
+      "run_at": "document_start",
+
+      "world": "MAIN"
+    },
+
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+
+      "js": [
+        "content.js"
+      ],
+
+      "run_at": "document_start",
+
+      "world": "ISOLATED"
+    }
+  ]
+}
